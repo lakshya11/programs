@@ -1,0 +1,11 @@
+def p_dec(func):
+	def func_wrapper(name):
+		print "python"
+		return "<p>{0}</p>".format(func(name))
+	return func_wrapper
+
+def get_text(name):
+	return "hello {0} .How r you?".format(name)
+
+get_text=p_dec(get_text)
+print get_text("john")

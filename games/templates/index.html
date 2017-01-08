@@ -1,0 +1,190 @@
+<!--<html>
+<head>
+Tambola
+</head>
+<body>
+hello
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.js"></script>-->
+    </head>
+
+    <body onload="setInterval('window.location.reload()', 5000);">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar navbar-custom navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">KG Tools</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <div class="navbar-form navbar-right" role="form">
+            <p>Login url </p>
+            <p>Hello Users</p>
+            <!-- add logged in user -->
+
+
+
+          </div>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+    <div class="jumbotron">
+      <div class="container">
+       <center><h1>KG Tools</h1>
+        <h3>Please Login to Play Tambola</h3>
+        <!-- if user not in db authorisation url-->
+      </center>
+      </div>
+    </div>
+
+        <!-- if authorised-->
+    <div class="jumbotron">
+      <div class="container">
+       <center><h1>E-Tambola</h1>
+        <h3>Let's Play Tambola</h3></center>
+      </div>
+    </div>
+    <div class="container">
+      <!-- create and display of ticket depending upon which number of ticket have been announec or not chnage the color-->
+
+
+    <div class="panel panel-primary">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Your Today's Ticket</div>
+      
+      <!-- Table -->
+      <table class="table">
+        <!--$table-->
+      </table>
+
+    </div>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="panel panel-primary">
+    <div class="panel-heading">Numbers already announced</div>  
+    <div class="panel-body">
+
+      <!-- create array of number announced -->
+
+    </div>
+    </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-primary">
+    <div class="panel-heading">Last Numbers announced</div> 
+    <div class="panel-body">
+        <center><h1>Number Announced</h1></center>
+    </div>
+    </div>
+        </div>
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+    <div class="panel-heading">Claim Prizes</div> 
+    <div class="panel-body">
+        <center>
+      <div class="col-md-12">
+        <div class="col-md-2">
+          <div class="col-md-12">
+            <center><button type="submit" class="btn btn-default claimmer" id="Corners" style="width:90%">Four Corners</button></center>
+          </div>
+          <div class="col-md-12">
+            <!-- four corner winners -->
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="col-md-12">
+            <center><button type="submit" class="btn btn-default claimmer" id="Top" style="width:90%">Top Row</button></center>
+          </div>
+          <div class="col-md-12" >
+            <!-- top row winner -->
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="col-md-12">
+            <center><button type="submit" class="btn btn-default claimmer" id="Middle" style="width:90%">Middle Row</button></center>
+          </div>
+          <div class="col-md-12">
+            <!-- middle row winner -->
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="col-md-12">
+            <center><button type="submit" class="btn btn-default claimmer" id="Bottom" style="width:90%">Bottom Row</button></center>
+          </div>
+          <div class="col-md-12">
+            <!-- bottom row -->
+          </div>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-3">
+          <div class="col-md-12">
+            <center><button type="submit" class="btn btn-info claimmer" id="House" style="width:90%">Full House</button></center>
+          </div>
+          <div class="col-md-12">
+            <!-- full house winner -->
+          </div>
+        </div>
+      </div>
+        </center>
+    </div>
+    </div>
+  </div>
+  
+        <div class="col-md-12">
+<br>
+<br>
+      <hr>
+
+  </div>
+      <footer>
+  <div class="container">
+    <div class="col-md-12">
+           <p>&copy;KG Tools Development Team</p>
+    </div>
+  </div>
+      </footer>
+    </div> <!-- /container --> 
+      <!--
+       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.js"></script>
+
+        <script src="js/main.js"></script>-->
+    </body>
+</html>

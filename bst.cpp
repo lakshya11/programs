@@ -1,0 +1,75 @@
+#include<iostream>
+
+using namespace std;
+struct Tree
+{
+	int data;
+	struct Tree *left;
+	struct Tree *right;
+
+};
+typedef Tree *tree;
+
+void display(tree &root)
+{
+	if(root)
+	{
+		display(root->left);
+		cout<<root->data<<"->";
+		display(root->right);
+	}
+}
+void insert(tree &root)
+{
+	tree p,nnode,temp;
+	int i,n,info;
+cout<<"enter the number of terms to be inserted";
+cin>>n;
+for(i=0;i<n;++i)
+{
+	cout<<"enter "; cin>>info;
+	nnode=new Tree;
+	nnode->data=info;
+	nnode->left=NULL;
+	nnode->right=NULL;
+	
+		p=root;
+		temp=NULL;
+		while(p!=NULL)
+		{
+			temp=p;
+			if(p->data<info)
+				p=p->right;
+			else
+				p=p->left;
+
+
+		}
+
+		if(temp==NULL)
+		root=nnode;
+		else
+		{
+			if(temp->data > info)
+				temp->left=nnode;
+
+			else
+			temp->right=nnode;
+
+		}
+		display(root);
+}
+}
+
+
+
+
+int main()
+{
+tree root;
+root=new Tree;
+root=NULL;
+insert(root);
+
+return 0;
+}
