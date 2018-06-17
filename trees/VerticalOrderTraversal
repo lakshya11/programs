@@ -1,0 +1,96 @@
+/*Vertical order traversal of tree with Hashmap and queue*/
+import java.util.*;
+
+import javafx.util.Pair;
+
+public class TreeVerticalOrder
+{
+    // Tree node
+    static class Node
+    {
+        int val;
+        Node left;
+        Node right;
+
+        // Constructor
+        Node(int data)
+        {
+            val = data;
+            left = null;
+            right = null;
+        }
+
+    }
+
+    public static String integerArrayListToString(List<Integer> nums, int length) {
+        if (length == 0) {
+            return "[]";
+        }
+
+        String result = "";
+        for(int index = 0; index < length; index++) {
+            Integer number = nums.get(index);
+            result += Integer.toString(number) + ", ";
+        }
+        return "[" + result.substring(0, result.length() - 2) + "]";
+    }
+
+
+    static void VerticalOrder(Node A)
+    {
+
+        if(A==null)return;
+
+        Queue<Pair<Node, Integer>> q = new LinkedList<Pair<Node,Integer>>();
+        HashMap<Integer,List<Integer>> verticalOrder = new HashMap<Integer, List<Integer>>();
+        q.add(new Pair(A,0));
+      
+        while(!q.isEmpty()){
+            Pair pair = q.remove();
+            Node node = (Node)pair.getKey();
+            Integer distance = (Integer)pair.getValue();
+            if(verticalOrder.containsKey(distance)) {
+                List<Integer> levelnodes = verticalOrder.get(distance);
+                levelnodes.add(node.val);
+                verticalOrder.put(distance, levelnodes);
+            }else{
+                ArrayList list = new ArrayList<Integer>();
+                list.add(node.val);
+                verticalOrder.put(distance,list);
+            }
+
+            if(node.left!=null)
+                q.add(new Pair(node.left,distance-1));
+            if(node.right!=null)
+                q.add(new Pair(node.right,distance+1));
+        }
+
+        for(Map.Entry<Integer,List<Integer>> entry:verticalOrder.entrySet()){
+            String nodes = integerArrayListToString(entry.getValue(), entry.getValue().size());
+            System.out.println(entry.getKey()+": "+nodes);
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        //Input 1
+//        Node root = new Node(1);
+//        root.left = new Node(2);
+//        root.right = new Node(3);
+//        root.left.left = new Node(4);
+//        root.left.right = new Node(5);
+//        root.right.left = new Node(6);
+//        root.right.right = new Node(7);
+//        root.right.left.right = new Node(8);
+//        root.right.right.right = new Node(9);
+//        System.out.println("Vertical Order traversal is");
+//        VerticalOrder(root);
+
+        //Input2
+        Node root = new Node(1);
+        root.right = new Node(2);
+        root.right.right=new Node(3);
+        VerticalOrder(root);
+    }
+}
